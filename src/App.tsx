@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { Button } from "react-bootstrap";
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import { optionType } from "./assets/types";
 
 const App = (): JSX.Element => {
@@ -9,6 +9,7 @@ const App = (): JSX.Element => {
 
   const [term, setTerm] = useState<string>("");
   const [options, setOptions] = useState<[]>([]);
+  const [city, setCity] = useState<optionType | null>(null);
 
   const getSearchOptions = async (value: string) => {
     try {
@@ -19,7 +20,6 @@ const App = (): JSX.Element => {
       if (response.ok) {
         const data = await response.json();
         setOptions(data);
-        // Fai qualcosa con i dati ricevuti
       } else {
         console.error("Errore nella richiesta API:", response.status);
       }
@@ -36,7 +36,22 @@ const App = (): JSX.Element => {
     getSearchOptions(value);
   };
 
+  const getForecast = (city: optionType) => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=f4a9a03c9735bbc42a53394d2698aa8e`
+    )
+      .then((res) => res.json())
+      .then((data) => console.log({ data }));
+  };
+
+  const onSubmit = () => {
+    if (city !== null) {
+      return getForecast(city);
+    }
+  };
+
   const onOptionSelect = (option: optionType) => {
+    setCity(option);
     if (option.lat !== undefined && typeof option.lat === "number") {
       console.log(option.name);
       fetch(
@@ -48,6 +63,13 @@ const App = (): JSX.Element => {
       console.error("Wrong latitude or lat is not a number.");
     }
   };
+
+  useEffect(() => {
+    if (city) {
+      setTerm(city.name);
+      setOptions([]);
+    }
+  }, [city]);
 
   return (
     <main className="main d-flex justify-content-center align-items-center mx-auto">
@@ -69,7 +91,9 @@ const App = (): JSX.Element => {
               className="searcher"
               onChange={onInputChange}
             />
-            <Button className="bottone">Search</Button>
+            <Button className="bottone" onClick={onSubmit}>
+              Search
+            </Button>
           </div>
 
           <div
