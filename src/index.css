@@ -1,15 +1,61 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+html,
+#root,
+body {
+  background: linear-gradient(
+    123deg,
+    #ffeb3bcc -3%,
+    #1f03f4 92%,
+    rgba(31, 188, 189, 0.4514180672268907) 100%
+  );
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.smaller {
+  font-size: large;
+}
+h2 {
+  font-size: x-large;
+  font-weight: bolder;
+  letter-spacing: 1.2px;
+}
+.bold {
+  font: bolder;
+  color: purple;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+}
+.searcher {
+  border-radius: 5px;
+  height: 25px;
+}
+.container {
+  font-size: xx-large;
+  text-align: center;
+  background-color: rgba(250, 235, 215, 0.18);
+  color: black;
+  height: 50%;
+  width: 50%;
+  padding: 30px;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+.searcher {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 175px;
+  height: 36px;
+  font-size: medium;
+  font-style: italic;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.bottone {
+  background-color: purple !important;
 }
