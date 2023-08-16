@@ -59,3 +59,20 @@ h2 {
 .bottone {
   background-color: purple !important;
 }
+
+.absolute {
+  position: absolute;
+  top: 37px;
+  left: 173px;
+  width: max-content;
+  padding: 0.3em;
+}
+
+.bottoneNome {
+  border: none;
+  background-color: white;
+}
+
+li {
+  list-style: none;
+}
