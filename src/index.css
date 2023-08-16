@@ -87,3 +87,30 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* FORECAST COMPONENT */
+.forecastBox {
+  height: 100vh;
+  width: 60vw;
+  /*   max-width: 500px;
+ */
+  display: flex;
+  justify-content: center;
+  background-color: #cccccc57;
+}
+
+.country {
+  color: rgba(49, 49, 49, 0.537);
+  font-weight: thin;
+  margin-left: 15px;
+}
+
+.miniBox {
+  background-color: #ece8e872;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px whitesmoke;
+}
+.imgs {
+  font-size: smaller;
+}
