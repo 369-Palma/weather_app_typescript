@@ -7,72 +7,83 @@ body {
     #1f03f4 92%,
     rgba(31, 188, 189, 0.4514180672268907) 100%
   );
-  width: 100vw;
-  height: 100vh;
   margin: 0;
   padding: 0;
 }
-.smaller {
-  font-size: large;
-}
-h2 {
-  font-size: x-large;
-  font-weight: bolder;
-  letter-spacing: 1.2px;
-}
-.bold {
-  font: bolder;
-  color: purple;
-}
+
+/* Aggiungi stile al container principale */
 .main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: center;
-  height: 100%;
+  height: 100vh;
 }
+
+/* Stile per la barra di ricerca */
+.searcher-container {
+  display: flex;
+  align-items: center;
+}
+
 .searcher {
   border-radius: 5px;
   height: 25px;
-}
-.container {
-  font-size: xx-large;
-  text-align: center;
-  background-color: rgba(250, 235, 215, 0.18);
-  color: black;
-  height: 50%;
-  width: 50%;
-  padding: 30px;
-}
-
-.searcher {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
   width: 165px;
-  height: 36px;
   font-size: medium;
   font-style: italic;
+  margin-right: 10px;
 }
 
-.bottone {
-  background-color: purple !important;
-}
-
-.absolute {
+/* Stile per la lista delle opzioni */
+.options-list {
   position: absolute;
   top: 37px;
-  left: 173px;
-  width: max-content;
+  left: 0;
+  width: 100%;
+  max-width: 50%; /* Aggiungi questa regola per evitare overflow */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Assicurati che il box sia sopra gli altri elementi */
+  display: none;
+}
+
+.show-options .options-list {
+  display: block;
+}
+
+.options-list li {
   padding: 0.3em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bottoneNome {
   border: none;
-  background-color: white;
+  cursor: pointer;
+  margin-right: 3em;
 }
 
-li {
-  list-style: none;
+.bottoneNome:hover {
+  border: 1px solid purple;
+  transform: scale(1);
+  box-shadow: 1px 1px 1px 1px purple;
+}
+
+/* Stile per il bottone */
+.bottone {
+  background-color: purple !important;
+  margin-top: 10px;
+}
+
+/* Stile per il container dei risultati */
+.results-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

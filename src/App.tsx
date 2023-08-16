@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { Button } from "react-bootstrap";
 import { useState, ChangeEvent } from "react";
+import { optionType } from "./assets/types";
 
 const App = (): JSX.Element => {
   /* http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key} */
@@ -35,6 +36,19 @@ const App = (): JSX.Element => {
     getSearchOptions(value);
   };
 
+  const onOptionSelect = (option: optionType) => {
+    if (option.lat !== undefined && typeof option.lat === "number") {
+      console.log(option.name);
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${option.lat}&lon=${option.lon}&appid=f4a9a03c9735bbc42a53394d2698aa8e`
+      )
+        .then((res) => res.json())
+        .then((data) => console.log({ data }));
+    } else {
+      console.error("Wrong latitude or lat is not a number.");
+    }
+  };
+
   return (
     <main className="main d-flex justify-content-center align-items-center mx-auto">
       <section className="container d-flex flex-column justify-content-center">
@@ -43,25 +57,40 @@ const App = (): JSX.Element => {
         </h2>
         <p className="pb-4 fs-5">Enter a city name</p>
 
-        <div className="d-flex position-relative justify-content-center align-items-center flex-wrap">
-          <input
-            type="text"
-            value={term}
-            className="searcher"
-            onChange={onInputChange}
-          ></input>
+        <div className="results-container">
+          <div
+            className={`searcher-container ${
+              options.length > 0 ? "show-options" : ""
+            }`}
+          >
+            <input
+              type="text"
+              value={term}
+              className="searcher"
+              onChange={onInputChange}
+            />
+            <Button className="bottone">Search</Button>
+          </div>
 
-          <ul className="absolute">
-            {options.map((option: { name: string }, index: number) => (
-              <li className="bottoneNome" key={option.name + "-" + index}>
-                <button className="bottoneNome">{option.name}</button>
-              </li>
-            ))}
-          </ul>
-
-          <Button className="bottone" /* onClick={handleSearch()} */>
-            Search
-          </Button>
+          <div
+            className={`options-box ${
+              options.length > 0 ? "show-options" : ""
+            }`}
+          >
+            <ul className="options-list">
+              {options.map((option: optionType, index: number) => (
+                <li
+                  key={option.name + "-" + index}
+                  className="bottoneNome"
+                  onClick={() => {
+                    onOptionSelect(option);
+                  }}
+                >
+                  {option.name}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </main>
