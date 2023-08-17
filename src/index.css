@@ -9,6 +9,8 @@ body {
   );
   margin: 0;
   padding: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* Aggiungi stile al container principale */
@@ -17,7 +19,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+}
+.search {
+  background-color: #ece8e846;
+  padding: 5em;
+  border-radius: 5px;
 }
 
 /* Stile per la barra di ricerca */
@@ -91,9 +98,7 @@ body {
 /* FORECAST COMPONENT */
 .forecastBox {
   height: 100vh;
-  width: 60vw;
-  /*   max-width: 500px;
- */
+  width: 100vw;
   display: flex;
   justify-content: center;
   background-color: #cccccc57;
@@ -111,6 +116,14 @@ body {
   border-radius: 5px;
   box-shadow: 0.5px 0.5px 0.5px 0.5px whitesmoke;
 }
-.imgs {
+.imgs,
+.piccolo {
   font-size: smaller;
+}
+
+.tail {
+  width: 120px;
+  height: 175px;
+  background-color: rgba(240, 255, 255, 0.225);
+  margin-right: 15px;
 }

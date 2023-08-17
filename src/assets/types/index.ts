@@ -1,5 +1,6 @@
 export type optionType = {
   name: string;
+  country: string;
   lat: number;
   lon: number;
 };
@@ -32,7 +33,7 @@ export type forecastType = {
         deg: number;
         gust: number;
       };
-      louds: {
+      clouds: {
         all: number;
       };
       pop: number;

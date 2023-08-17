@@ -3,7 +3,7 @@ import { optionType, forecastType } from "../assets/types/index";
 
 export const useForecast = () => {
   const [term, setTerm] = useState<string>("");
-  const [options, setOptions] = useState<optionType[]>([]); // Correzione qui
+  const [options, setOptions] = useState<optionType[]>([]);
   const [city, setCity] = useState<optionType | null>(null);
   const [forecast, setForecast] = useState<forecastType | null>(null);
 
@@ -40,7 +40,7 @@ export const useForecast = () => {
       .then((data) => {
         const forecastData = {
           ...data.city,
-          list: data.list.slice(0, 16),
+          list: data.list.slice(0, 15),
         };
 
         setForecast(forecastData);
