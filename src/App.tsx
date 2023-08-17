@@ -9,7 +9,7 @@ const App = (): JSX.Element => {
     useForecast();
 
   return (
-    <main className="main d-flex justify-content-center align-items-center mx-auto">
+    <main className="main ">
       {forecast ? (
         <Forecast data={forecast} />
       ) : (

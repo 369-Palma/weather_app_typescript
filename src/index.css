@@ -1,16 +1,15 @@
 html,
-#root,
 body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(
     123deg,
     #ffeb3bcc -3%,
     #1f03f4 92%,
     rgba(31, 188, 189, 0.4514180672268907) 100%
   );
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
 }
 
 /* Aggiungi stile al container principale */
@@ -19,11 +18,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
 }
 .search {
   background-color: #ece8e846;
-  padding: 5em;
+
   border-radius: 5px;
 }
 
@@ -35,25 +34,23 @@ body {
 
 .searcher {
   border-radius: 5px;
-  height: 25px;
-  width: 165px;
+  height: 34px;
+  width: 175px;
   font-size: medium;
-  font-style: italic;
   margin-right: 10px;
 }
 
 /* Stile per la lista delle opzioni */
 .options-list {
   position: absolute;
-  top: 37px;
-  left: 0;
+  top: 40px;
+  left: 10px;
   width: 100%;
-  max-width: 50%; /* Aggiungi questa regola per evitare overflow */
+  max-width: 60%;
   background-color: white;
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 10; /* Assicurati che il box sia sopra gli altri elementi */
-  display: none;
+  z-index: 10;
 }
 
 .show-options .options-list {
@@ -61,7 +58,8 @@ body {
 }
 
 .options-list li {
-  padding: 0.3em;
+  /*  padding: 0.3em; */
+  padding-left: 3px;
 
   display: flex;
   justify-content: space-between;
@@ -72,6 +70,7 @@ body {
   border: none;
   cursor: pointer;
   margin-right: 3em;
+  width: 100%;
 }
 
 .bottoneNome:hover {
@@ -111,6 +110,8 @@ body {
 }
 
 .miniBox {
+  width: 200px;
+  height: 175px;
   background-color: #ece8e872;
   color: black;
   border-radius: 5px;
@@ -122,8 +123,11 @@ body {
 }
 
 .tail {
-  width: 120px;
+  width: 200px;
   height: 175px;
   background-color: rgba(240, 255, 255, 0.225);
   margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

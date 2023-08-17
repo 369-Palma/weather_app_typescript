@@ -19,7 +19,7 @@ export const SearchPage = ({
   onSubmit,
 }: Props): JSX.Element => {
   return (
-    <section className="search d-flex flex-column justify-content-center">
+    <section className="search d-flex flex-column align-items-center  p-5 justify-content-center">
       <h2>
         Weather <span className="fs-1 bold">Forecast</span>
       </h2>
