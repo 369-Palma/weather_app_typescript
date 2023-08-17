@@ -60,7 +60,6 @@ body {
 .options-list li {
   /*  padding: 0.3em; */
   padding-left: 3px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,7 +68,7 @@ body {
 .bottoneNome {
   border: none;
   cursor: pointer;
-  margin-right: 3em;
+  /* margin-right: 3em; */
   width: 100%;
 }
 
@@ -87,21 +86,16 @@ body {
 
 /* Stile per il container dei risultati */
 .results-container {
+  padding: 3em;
   position: relative;
-  width: 100%;
+  /* width: 100%; */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 /* FORECAST COMPONENT */
-.forecastBox {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  background-color: #cccccc57;
-}
 
 .country {
   color: rgba(49, 49, 49, 0.537);
