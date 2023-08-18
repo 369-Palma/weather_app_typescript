@@ -1,8 +1,11 @@
 #root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100%;
+  min-height: 100vh;
   background: linear-gradient(
     123deg,
     #ffeb3bcc -3%,
@@ -27,6 +30,12 @@
   border-radius: 5px;
 } */
 
+#search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Stile per la barra di ricerca */
 .searcher-container {
   display: flex;
@@ -38,7 +47,6 @@
   height: 34px;
   min-width: 175px;
   font-size: medium;
-  margin-right: 10px;
 }
 
 /* Stile per la lista delle opzioni */
@@ -82,7 +90,6 @@
 /* Stile per il bottone */
 .bottone {
   background-color: purple !important;
-  margin-top: 10px;
 }
 
 /* Stile per il container dei risultati */
@@ -107,7 +114,6 @@
   background-color: #ece8e872;
   color: black;
   border-radius: 5px;
-  box-shadow: 0.5px 0.5px 0.5px 0.5px whitesmoke;
 }
 .imgs,
 .piccolo {

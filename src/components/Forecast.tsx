@@ -66,7 +66,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
       className="d-flex flex-column 
     justify-content-center"
     >
-      <section className="mx-auto ">
+      <section className="mx-auto my-4">
         <h2 className="fs-1 bold ">
           {data.name}
           <span className="country">{data.country}</span>
@@ -81,7 +81,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         <Degree temp={Math.ceil(today.main.temp_min)} />
       </section>
 
-      <section className="d-flex align-items-center justify-content-center overflow-x-scroll w-50 mx-auto m-5">
+      <section className="d-flex align-items-center justify-content-center overflow-x-scroll w-50 mx-auto m-5 ">
         {data.list.map((item, i) => (
           <div
             className="d-flex flex-column align-items-center col-md-3 pe-3"
@@ -101,19 +101,19 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         ))}
       </section>
 
-      <section className="d-flex align-items-center justify-content-center my-2">
-        <div className="miniBox d-flex flex-column me-4 py-2 px-3 justify-content-center align-items-center">
+      <section className="d-flex flex-wrap align-items-center justify-content-center my-4 ">
+        <div className="miniBox d-flex flex-column  m-4 justify-content-center align-items-center ">
           <FiSunrise /> <span> {getSunTime(data.sunrise)}</span>
         </div>
-        <div className="d-flex flex-column miniBox py-2 px-3 justify-content-center align-items-center">
+        <div className="d-flex flex-column miniBox m-4 justify-content-center align-items-center  ">
           <FiSunset /> <span> {getSunTime(data.sunset)} </span>
         </div>
       </section>
 
-      <section className="d-flex flex-row justify-content-center flex-wrap">
+      <section className="d-flex flex-row justify-content-center flex-wrap mx-auto">
         {/* wind */}
 
-        <div className="tail col-md-6 col-lg-4 mb-3">
+        <div className="tail col-md-6 col-lg-4 m-2">
           <div className=" d-flex flex-row justify-content-center">
             <FaWind />
             <p className="ps-2">Wind</p>
@@ -127,7 +127,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         </div>
 
         {/* feels like*/}
-        <div className="tail col-md-6 col-lg-4 mb-3">
+        <div className="tail col-md-6 col-lg-4 m-2">
           <div className=" d-flex flex-row justify-content-center">
             <FaTemperatureLow />
             <p className="ps-2">Feels like</p>
@@ -148,7 +148,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         </div>
 
         {/* humidity */}
-        <div className="tail col-md-6 col-lg-4 mb-3">
+        <div className="tail col-md-6 col-lg-4 m-2">
           <div className=" d-flex flex-row justify-content-center">
             <WiHumidity />
             <p className="ps-2">Humidity</p>
@@ -160,7 +160,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         </div>
 
         {/* Pop */}
-        <div className="tail col-md-6 col-lg-4 mb-3">
+        <div className="tail col-md-6 col-lg-4 m-2">
           <div className=" d-flex flex-row justify-content-center">
             <GiDroplets />
             <p className="ps-2">Precipitation</p>
@@ -174,7 +174,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         </div>
 
         {/* Pressure */}
-        <div className="tail col-md-6 col-lg-4 mb-3">
+        <div className="tail col-md-6 col-lg-4 m-2">
           <div className=" d-flex flex-row justify-content-center">
             <WiBarometer />
             <p className="ps-2">Pressure </p>
@@ -189,7 +189,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         </div>
 
         {/* Visibility */}
-        <div className="tail col-md-6 col-lg-4 mb-3">
+        <div className="tail col-md-6 col-lg-4 m-2">
           <div className=" d-flex flex-row justify-content-center">
             <MdVisibility />
             <p className="ps-2">Visibility</p>
