@@ -66,7 +66,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
       className="search w-50 d-flex flex-column 
     justify-content-center align-items-center"
     >
-      <section className="mx-auto my-4 d-flex flex-column justify-content-center align-items-center ">
+      <section className="mx-auto my-4 d-flex flex-column text-center justify-content-center align-items-center ">
         <h2 className="fs-1 bold ">
           {data.name}
           <span className="country">{data.country}</span>
@@ -83,10 +83,12 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         </div>
       </section>
 
-      <section className="d-flex align-items-center justify-content-center overflow-x-scroll w-50 mx-auto m-5 ">
+      {/* SESSIONE METEO IMGS */}
+
+      <section className="container-scroll">
         {data.list.map((item, i) => (
           <div
-            className="d-flex flex-column align-items-center col-md-3 pe-3"
+            className="d-flex flex-column align-items-center col-md-3"
             key={i}
           >
             <p>{i === 0 ? "Now" : new Date(item.dt * 1000).getHours()}</p>
@@ -95,13 +97,14 @@ export const Forecast = ({ data }: Props): JSX.Element => {
               src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
               alt={`weather-icon-${item.weather[0].description}`}
             />
-
-            <p>
+            <p className="piccolo">
               <Degree temp={Math.round(item.main.temp)} />
             </p>
           </div>
         ))}
       </section>
+
+      {/* SESSIONE ALBA E TRAMONTO */}
 
       <section className="d-flex flex-wrap align-items-center justify-content-center my-4 mx-auto">
         <div className="miniBox d-flex flex-column  m-2 justify-content-center align-items-center ">

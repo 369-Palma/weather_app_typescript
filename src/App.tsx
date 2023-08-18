@@ -15,13 +15,15 @@ const App = (): JSX.Element => {
           <Forecast data={forecast} />
         </div>
       ) : (
-        <SearchPage
-          term={term}
-          options={options}
-          onInputChange={onInputChange}
-          onOptionSelect={onOptionSelect}
-          onSubmit={onSubmit}
-        />
+        <div className="searchPag mx-auto">
+          <SearchPage
+            term={term}
+            options={options}
+            onInputChange={onInputChange}
+            onOptionSelect={onOptionSelect}
+            onSubmit={onSubmit}
+          />
+        </div>
       )}
     </main>
   );

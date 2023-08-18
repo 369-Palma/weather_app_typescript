@@ -19,6 +19,12 @@
   min-width: 100%;
 }
 
+.searchPag {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .search {
   height: 50%;
   background-color: #ece8e846;
@@ -104,6 +110,16 @@
   margin-left: 15px;
 }
 
+.container-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
 .miniBox {
   width: 8em;
   height: 175px;
@@ -111,12 +127,21 @@
   color: black;
   border-radius: 5px;
 }
-.imgs,
+/* .imgs,
+.piccolo {
+  font-size: smaller;
+  text-align: center;
+} */
+
+.imgs {
+  display: block;
+  margin-bottom: 5px;
+}
+
 .piccolo {
   font-size: smaller;
   text-align: center;
 }
-
 .tail {
   width: 8em;
   height: 200px;
