@@ -15,20 +15,15 @@
 }
 
 /* Aggiungi stile al container principale */
-/* .main {
-  margin-top: 3em;
-  margin-bottom: 3em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
-/* .search {
+.main {
+  min-width: 100%;
+}
+
+.search {
   height: 50%;
   background-color: #ece8e846;
   border-radius: 5px;
-} */
+}
 
 #search {
   display: flex;
@@ -51,7 +46,6 @@
 
 /* Stile per la lista delle opzioni */
 .options-list {
-  position: absolute;
   top: 40px;
   left: 10px;
   width: 100%;
@@ -101,7 +95,9 @@
 } */
 
 /* FORECAST COMPONENT */
-
+.rigaImg {
+  min-width: 100%;
+}
 .country {
   color: rgba(49, 49, 49, 0.537);
   font-weight: thin;
@@ -109,7 +105,7 @@
 }
 
 .miniBox {
-  width: 200px;
+  width: 8em;
   height: 175px;
   background-color: #ece8e872;
   color: black;
@@ -122,8 +118,8 @@
 }
 
 .tail {
-  width: 200px;
-  height: 175px;
+  width: 8em;
+  height: 200px;
   background-color: rgba(240, 255, 255, 0.225);
   margin-right: 15px;
   display: flex;

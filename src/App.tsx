@@ -11,7 +11,9 @@ const App = (): JSX.Element => {
   return (
     <main className="main ">
       {forecast ? (
-        <Forecast data={forecast} />
+        <div className="d-flex align-items-center justify-content-center m-0 p-0">
+          <Forecast data={forecast} />
+        </div>
       ) : (
         <SearchPage
           term={term}
