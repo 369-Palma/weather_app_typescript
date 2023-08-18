@@ -62,7 +62,10 @@ export const Forecast = ({ data }: Props): JSX.Element => {
   const today = data.list[0];
 
   return (
-    <div className="d-flex text-center flex-column justify-content-center">
+    <div
+      className="d-flex flex-column 
+    justify-content-center"
+    >
       <section className="mx-auto ">
         <h2 className="fs-1 bold ">
           {data.name}
@@ -78,9 +81,12 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         <Degree temp={Math.ceil(today.main.temp_min)} />
       </section>
 
-      <section className="d-flex overflow-x-scroll">
+      <section className="d-flex align-items-center justify-content-center overflow-x-scroll w-50 mx-auto m-5">
         {data.list.map((item, i) => (
-          <div className="col-md-3" key={i}>
+          <div
+            className="d-flex flex-column align-items-center col-md-3 pe-3"
+            key={i}
+          >
             <p>{i === 0 ? "Now" : new Date(item.dt * 1000).getHours()}</p>
             <img
               className="imgs"
@@ -95,7 +101,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         ))}
       </section>
 
-      <section className="d-flex justify-content-center my-2">
+      <section className="d-flex align-items-center justify-content-center my-2">
         <div className="miniBox d-flex flex-column me-4 py-2 px-3 justify-content-center align-items-center">
           <FiSunrise /> <span> {getSunTime(data.sunrise)}</span>
         </div>
