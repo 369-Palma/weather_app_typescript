@@ -67,7 +67,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
     justify-content-center align-items-center"
     >
       <section className="mx-auto my-4 d-flex flex-column text-center justify-content-center align-items-center ">
-        <h2 className="fs-1 bold ">
+        <h2 className="fs-1 fw-bold ">
           {data.name}
           <span className="country">{data.country}</span>
         </h2>
@@ -78,7 +78,9 @@ export const Forecast = ({ data }: Props): JSX.Element => {
           {today.weather[0].main} {today.weather[0].description}
         </p>
         <div className="d-flex ">
-          H: <Degree temp={Math.ceil(today.main.temp_max)} />/ L:{" "}
+          <span className="bold"> H: </span>
+          <Degree temp={Math.ceil(today.main.temp_max)} />/{" "}
+          <span className="bold"> L: </span>
           <Degree temp={Math.ceil(today.main.temp_min)} />
         </div>
       </section>
@@ -91,7 +93,13 @@ export const Forecast = ({ data }: Props): JSX.Element => {
             className="d-flex flex-column align-items-center col-md-3"
             key={i}
           >
-            <p>{i === 0 ? "Now" : new Date(item.dt * 1000).getHours()}</p>
+            <p>
+              {i === 0 ? (
+                <span className="bold">Now</span>
+              ) : (
+                new Date(item.dt * 1000).getHours()
+              )}
+            </p>
             <img
               className="imgs"
               src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
@@ -108,10 +116,12 @@ export const Forecast = ({ data }: Props): JSX.Element => {
 
       <section className="d-flex flex-wrap align-items-center justify-content-center my-4 mx-auto">
         <div className="miniBox d-flex flex-column  m-2 justify-content-center align-items-center ">
-          <FiSunrise /> <span> {getSunTime(data.sunrise)}</span>
+          <FiSunrise className="fs-5 fw-bold mb-1" />{" "}
+          <span className="bold"> {getSunTime(data.sunrise)}</span>
         </div>
         <div className="d-flex flex-column miniBox m-2 justify-content-center align-items-center  ">
-          <FiSunset /> <span> {getSunTime(data.sunset)} </span>
+          <FiSunset className="fs-5 fw-bold mb-1" />{" "}
+          <span className="bold"> {getSunTime(data.sunset)} </span>
         </div>
       </section>
 
@@ -120,8 +130,8 @@ export const Forecast = ({ data }: Props): JSX.Element => {
 
         <div className="tail  col-md-4  m-2">
           <div className=" d-flex flex-row justify-content-center">
-            <FaWind />
-            <p className="ps-2">Wind</p>
+            <FaWind className=" bold" />
+            <p className="ps-2 fw-bold">Wind</p>
           </div>
           <div className="wind d-flex flex-row mx-auto ">
             <h3 className="my-2"> {Math.round(today.wind.speed)} Km/h</h3>
@@ -134,8 +144,8 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         {/* feels like*/}
         <div className="tail  col-md-4  m-2">
           <div className=" d-flex flex-row justify-content-center">
-            <FaTemperatureLow />
-            <p className="ps-2">Feels like</p>
+            <FaTemperatureLow className="bold" />
+            <p className="ps-2 fw-bolder">Feels like</p>
           </div>
           <div className="wind d-flex flex-row mx-auto ">
             <h3 className="my-2">
@@ -154,9 +164,9 @@ export const Forecast = ({ data }: Props): JSX.Element => {
 
         {/* humidity */}
         <div className="tail  col-md-4  m-2">
-          <div className=" d-flex flex-row justify-content-center">
-            <WiHumidity />
-            <p className="ps-2">Humidity</p>
+          <div className="  d-flex flex-row justify-content-center">
+            <WiHumidity className="bold fs-5" />
+            <p className="ps-2 fw-bold">Humidity</p>
           </div>
           <div className=" d-flex flex-row mx-auto ">
             <h3 className="my-2"> {Math.round(today.main.humidity)} %</h3>
@@ -167,8 +177,8 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         {/* Pop */}
         <div className="tail  col-md-4  m-2">
           <div className=" d-flex flex-row justify-content-center">
-            <GiDroplets />
-            <p className="ps-2">Precipitation</p>
+            <GiDroplets className=" bold" />
+            <p className="ps-2 fw-bold">Precipitation</p>
           </div>
           <div className=" d-flex flex-row mx-auto ">
             <h3 className="my-2"> {Math.round(today.pop) * 1000} %</h3>
@@ -181,8 +191,8 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         {/* Pressure */}
         <div className="tail  col-md-4  m-2">
           <div className=" d-flex flex-row justify-content-center">
-            <WiBarometer />
-            <p className="ps-2">Pressure </p>
+            <WiBarometer className="bold fs-4" />
+            <p className="ps-2 fw-bold">Pressure </p>
           </div>
           <div className=" d-flex flex-row mx-auto ">
             <h3 className="my-2"> {Math.round(today.main.pressure)} hPa</h3>
@@ -194,10 +204,10 @@ export const Forecast = ({ data }: Props): JSX.Element => {
         </div>
 
         {/* Visibility */}
-        <div className="tail  col-md-4  m-2">
+        <div className="tail col-md-4  m-2">
           <div className=" d-flex flex-row justify-content-center">
-            <MdVisibility />
-            <p className="ps-2">Visibility</p>
+            <MdVisibility className="bold" />
+            <p className="ps-2 fw-bold">Visibility</p>
           </div>
           <div className=" d-flex flex-row mx-auto ">
             <h3 className="my-2"> {today.visibility / 1000} Km</h3>

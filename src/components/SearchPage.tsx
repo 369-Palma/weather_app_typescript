@@ -48,7 +48,7 @@ export const SearchPage = ({
         <div
           className={`options-box ${options.length > 0 ? "show-options" : ""}`}
         >
-          <ul className="options-list">
+          <ul className="options-list p-0">
             {options.map((option: optionType, index: number) => (
               <li
                 key={option.name + "-" + index}
