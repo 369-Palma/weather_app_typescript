@@ -14,7 +14,7 @@ export type forecastType = {
     {
       dt: number;
       main: {
-        feals_like: number;
+        feels_like: number;
         humidity: number;
         pressure: number;
         temp: number;

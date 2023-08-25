@@ -155,7 +155,7 @@ export const Forecast = ({ data }: Props): JSX.Element => {
           </div>
           <p className="piccolo">
             {`Feels ${
-              Math.round(today.main.feals_like) < Math.round(today.main.temp)
+              Math.round(today.main.feels_like) < Math.round(today.main.temp)
                 ? `colder`
                 : `warmer`
             }`}{" "}
