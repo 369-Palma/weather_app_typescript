@@ -10,7 +10,7 @@ export const useForecast = () => {
   const getSearchOptions = async (value: string) => {
     try {
       const response = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=f4a9a03c9735bbc42a53394d2698aa8e`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${value.trim()}&limit=5&appid=f4a9a03c9735bbc42a53394d2698aa8e`
       );
 
       if (response.ok) {
