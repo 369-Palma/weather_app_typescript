@@ -10,7 +10,7 @@ type Props = {
 };
 const Degree = ({ temp }: { temp: number }): JSX.Element => (
   <span>
-    {temp}
+    {Math.round(temp - 273.15)} 
     <sup>o</sup>
   </span>
 );
